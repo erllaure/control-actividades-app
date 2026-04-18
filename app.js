@@ -609,5 +609,13 @@
       .replaceAll('"', "&quot;")
       .replaceAll("<", "&lt;")
       .replaceAll(">", "&gt;");
+    guardarActividad({
+  actividad: nuevaFila.activity || "",
+  horaInicio: nuevaFila.start,
+  horaFin: nuevaFila.end,
+  completado: nuevaFila.done,
+  fecha: state.selectedDate,
+  idLocal: nuevaFila.id
+});
   }
 })();
