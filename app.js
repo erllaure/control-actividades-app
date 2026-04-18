@@ -167,11 +167,24 @@
 
     elements.addRowBtn.addEventListener("click", function () {
       const plan = getEditablePlan(state.selectedDate);
-      plan.push(createEmptyRow(getSuggestedStart(plan)));
+      const nuevaFila = createEmptyRow(getSuggestedStart(plan));
+    
+      plan.push(nuevaFila);
       sortPlan(plan);
       saveState();
       renderDailyPlan();
       renderStats();
+    
+      if (typeof guardarActividad === "function") {
+        guardarActividad({
+          actividad: nuevaFila.activity || "",
+          horaInicio: nuevaFila.start,
+          horaFin: nuevaFila.end,
+          completado: nuevaFila.done,
+          fecha: state.selectedDate,
+          idLocal: nuevaFila.id
+        });
+      }
     });
 
     elements.resetDayBtn.addEventListener("click", function () {
