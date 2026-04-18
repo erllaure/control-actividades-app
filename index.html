@@ -116,5 +116,27 @@
   </template>
 
   <script src="./app.js"></script>
+  
+  <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AQUI",
+  authDomain: "AQUI",
+  projectId: "AQUI",
+  storageBucket: "AQUI",
+  messagingSenderId: "AQUI",
+  appId: "AQUI"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.guardarActividad = async function(datos) {
+  await addDoc(collection(db, "actividades"), datos);
+  console.log("🔥 Guardado en Firebase");
+};
+</script>
 </body>
 </html>
