@@ -381,15 +381,82 @@ input[type="checkbox"] {
     padding: 18px;
   }
 
-  .planner-table th:nth-child(1),
-  .planner-table td:nth-child(1),
-  .planner-table th:nth-child(2),
-  .planner-table td:nth-child(2) {
-    min-width: 108px;
+  .kpi-card strong {
+    font-size: 1.7rem;
   }
 
-  .planner-table th:nth-child(3),
-  .planner-table td:nth-child(3) {
-    min-width: 220px;
+  .planner-actions,
+  .planner-actions .ghost-button,
+  .planner-actions .solid-button,
+  .ghost-button,
+  .solid-button {
+    width: 100%;
+  }
+
+  .week-nav,
+  .date-controls {
+    width: 100%;
+  }
+
+  .field {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .planner-table thead {
+    display: none;
+  }
+
+  .planner-table,
+  .planner-table tbody,
+  .planner-table tr,
+  .planner-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .planner-table tr {
+    margin-bottom: 14px;
+    padding: 14px;
+    border: 1px solid rgba(215, 203, 184, 0.75);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+  .planner-table td {
+    border-bottom: 0;
+    padding: 8px 0;
+  }
+
+  .planner-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .planner-table td:last-child {
+    padding-top: 12px;
+  }
+
+  .planner-table td:last-child::before {
+    display: none;
+  }
+
+  .activity-input,
+  .start-input,
+  .end-input {
+    width: 100%;
+  }
+
+  .delete-button {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(217, 108, 63, 0.12);
   }
 }

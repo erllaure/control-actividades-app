@@ -341,11 +341,11 @@ function renderDailyPlan() {
     const completedClass = row.done ? "completed" : "";
     return (
       '<tr class="' + completedClass + '" data-id="' + row.id + '">' +
-      '<td><input class="start-input" type="time" value="' + escapeHtml(row.start) + '"></td>' +
-      '<td><input class="end-input" type="time" value="' + escapeHtml(row.end) + '"></td>' +
-      '<td><input class="activity-input" type="text" value="' + escapeHtml(row.activity) + '" placeholder="Escribe una actividad"></td>' +
-      '<td><input class="check-input" type="checkbox" ' + (row.done ? "checked" : "") + "></td>" +
-      '<td><button class="delete-button" type="button">Eliminar</button></td></tr>'
+      '<td data-label="Inicio"><input class="start-input" type="time" value="' + escapeHtml(row.start) + '"></td>' +
+      '<td data-label="Fin"><input class="end-input" type="time" value="' + escapeHtml(row.end) + '"></td>' +
+      '<td data-label="Actividad"><input class="activity-input" type="text" value="' + escapeHtml(row.activity) + '" placeholder="Escribe una actividad"></td>' +
+      '<td data-label="Check"><input class="check-input" type="checkbox" ' + (row.done ? "checked" : "") + "></td>" +
+      '<td data-label="Accion"><button class="delete-button" type="button">Eliminar</button></td></tr>'
     );
   }).join("");
 }
