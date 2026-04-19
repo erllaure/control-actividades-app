@@ -35,6 +35,8 @@
           </label>
           <button id="todayBtn" class="solid-button" type="button">Ir a hoy</button>
         </div>
+
+        <p id="syncStatus" class="sync-status">Conectando con Firebase...</p>
       </div>
     </header>
 
@@ -115,34 +117,6 @@
     </tr>
   </template>
 
-  <script src="./app.js"></script>
-
-<script src="./app.js"></script>
-
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyARLLlvLd1m0fhQANK1QuzQrV0QeDRcCmk",
-    authDomain: "control-actividades-beab2.firebaseapp.com",
-    projectId: "control-actividades-beab2",
-    storageBucket: "control-actividades-beab2.firebasestorage.app",
-    messagingSenderId: "22022649880",
-    appId: "1:22022649880:web:b1246a7413010612959ced"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  window.guardarActividad = async function(datos) {
-    try {
-      await addDoc(collection(db, "actividades"), datos);
-      console.log("🔥 Guardado en Firebase");
-    } catch (error) {
-      console.error("Error al guardar en Firebase:", error);
-    }
-  };
-</script>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
